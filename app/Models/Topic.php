@@ -20,4 +20,9 @@ class Topic extends Model
     {
         return $this->hasOne(Test::class);
     }
+
+    public function questions()
+    {
+        return $this->hasManyThrough(Question::class, Test::class);
+    }
 }
